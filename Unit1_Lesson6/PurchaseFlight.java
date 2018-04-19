@@ -1,4 +1,3 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,39 +10,34 @@ public class PurchaseFlight extends PageObject {
 
     @FindBy(css = "body > div.container > p:nth-child(2)")
     private WebElement airline;
+    @FindBy(css = "body > div.container > p:nth-child(3)")
+    private WebElement flight;
+    @FindBy(css = "body > div.container > p:nth-child(4)")
+    private WebElement price1;
+    @FindBy(css = "body > div.container > p:nth-child(7) > em")
+    WebElement totalCost;
+    @FindBy(xpath = "/html/body/div[2]/p[4]")
+    WebElement regTaxes;
 
     public String getAirlineText() {
         String airlineText = airline.getText();
         return airlineText;
     }
 
-    @FindBy(css = "body > div.container > p:nth-child(3)")
-    private WebElement flight;
-
     public String getFlightText() {
         String flightText = flight.getText();
         return flightText;
     }
-
-
-    @FindBy(css = "body > div.container > p:nth-child(4)")
-    private WebElement price1;
 
     public String getPriceText() {
         String priceText = price1.getText();
         return priceText;
     }
 
-    @FindBy(css = "body > div.container > p:nth-child(7) > em")
-    WebElement totalCost;
-
     public String getTotalCost() {
         String totalCostText = totalCost.getText();
         return totalCostText;
     }
-
-    @FindBy(xpath = "/html/body/div[2]/p[4]")
-    WebElement regTaxes;
 
     public String getSumTotalCost() {
         String[] regTaxesText = regTaxes.getText().split(":");
@@ -106,7 +100,7 @@ public class PurchaseFlight extends PageObject {
 
     public ConfirmationFlight clickButton(){
         purchaseButton.click();
-        return new ConfirmationFlight(driver);
+        return new ConfirmationFlight(PageObject.getInstance());
     }
 
 

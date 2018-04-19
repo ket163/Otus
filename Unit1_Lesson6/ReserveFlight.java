@@ -10,25 +10,25 @@ public class ReserveFlight extends PageObject {
 
     @FindBy(css = "body > div.container > h3")
     private WebElement titleText;
-
-
-
     @FindBy(css = "body > div.container > table > tbody > tr:nth-child(3) > td:nth-child(4)")
     private WebElement airline;
+    @FindBy(css = "body > div.container > table > tbody > tr:nth-child(3) > td:nth-child(3)")
+    private WebElement flightNumber;
+    @FindBy(css = "body > div.container > table > tbody > tr:nth-child(3) > td:nth-child(7)")
+    private WebElement price;
+    @FindBy(css = "body > div.container > table > tbody > tr:nth-child(3) > td:nth-child(2) > input")
+    WebElement chooseFlightButton;
+
     public String getAirlineText() {
         String AirlineText = airline.getText();
         return AirlineText;
     }
 
-    @FindBy(css = "body > div.container > table > tbody > tr:nth-child(3) > td:nth-child(3)")
-    private WebElement flightNumber;
     public String getFlightNumberText() {
         String chooseFlightNumberText = flightNumber.getText();
         return chooseFlightNumberText;
     }
 
-    @FindBy(css = "body > div.container > table > tbody > tr:nth-child(3) > td:nth-child(7)")
-    private WebElement price;
     public String getPriceText() {
         String priceText = price.getText().substring(1);
         return priceText;
@@ -38,11 +38,9 @@ public class ReserveFlight extends PageObject {
         return titleText.getText();
     }
 
-    @FindBy(css = "body > div.container > table > tbody > tr:nth-child(3) > td:nth-child(2) > input")
-    WebElement chooseFlightButton;
     public ReserveFlight clickChooseFlightButton() {
         chooseFlightButton.click();
-        return new ReserveFlight(driver);
+        return new ReserveFlight(PageObject.getInstance());
     }
 
 
