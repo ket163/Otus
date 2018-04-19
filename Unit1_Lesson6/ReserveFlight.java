@@ -38,9 +38,9 @@ public class ReserveFlight extends PageObject {
         return titleText.getText();
     }
 
-    public ReserveFlight clickChooseFlightButton() {
+    public PurchaseFlight clickChooseFlightButton() {
         chooseFlightButton.click();
-        return new ReserveFlight(PageObject.getInstance());
+        return new PurchaseFlight(PageObject.getInstance());
     }
 
 
