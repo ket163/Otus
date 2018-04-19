@@ -11,19 +11,17 @@ public class ChooseFlight extends PageObject {
     }
 
     @FindBy(css = "body > div.container > form > select:nth-child(1)")
-    private  WebElement departureCity;
-     String departureCityText = departureCity.getText();
+    private WebElement departureCity;
     @FindBy(css = "body > div.container > form > select:nth-child(4)")
     private WebElement destinationCity;
-    String destinationCityText = destinationCity.getText();
     @FindBy(css = "body > div.container > form > div > input")
     private WebElement findFlightsButton;
 
 
     public void selectDeparture() {
+
         Select selectDeparture = new Select(departureCity);
         selectDeparture.selectByValue("Boston");
-
     }
 
     public String selectDepartureText() {
@@ -31,13 +29,11 @@ public class ChooseFlight extends PageObject {
         selectDeparture.selectByValue("Boston");
         String text = selectDeparture.getFirstSelectedOption().getText();
         return text;
-
     }
 
     public void selectDestination() {
         Select selectDestination = new Select(destinationCity);
         selectDestination.selectByValue("Berlin");
-
     }
 
     public String selectDestinationText() {
@@ -45,14 +41,10 @@ public class ChooseFlight extends PageObject {
         selectDestination.selectByValue("Berlin");
         String text = selectDestination.getFirstSelectedOption().getText();
         return text;
-
     }
 
     public ReserveFlight clickFindFlightsButton() {
         findFlightsButton.click();
-        return new ReserveFlight(driver);
+        return new ReserveFlight(PageObject.getInstance());
     }
-
-
-
 }
