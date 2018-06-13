@@ -1,0 +1,4 @@
+[2018-06-14T02:17:09+0400] [WARNING] https://mc.yandex.ru/metrika/watch.js 35 chrome.loadTimes() is deprecated, instead use standardized API: Navigation Timing 2. https://www.chromestatus.com/features/5637885046816768.
+[2018-06-14T02:17:09+0400] [WARNING] https://mc.yandex.ru/metrika/watch.js 35 chrome.loadTimes() is deprecated, instead use standardized API: Paint Timing. https://www.chromestatus.com/features/5637885046816768.
+[2018-06-14T02:17:09+0400] [WARNING] https://mc.yandex.ru/metrika/watch.js 35 chrome.loadTimes() is deprecated, instead use standardized API: Navigation Timing 2. https://www.chromestatus.com/features/5637885046816768.
+[2018-06-14T02:17:09+0400] [WARNING] https://mc.yandex.ru/metrika/watch.js 35 chrome.loadTimes() is deprecated, instead use standardized API: Paint Timing. https://www.chromestatus.com/features/5637885046816768.
