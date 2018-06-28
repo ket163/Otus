@@ -1,0 +1,6 @@
+login\pages\LoginPage.class
+clothes\pages\TShirtsPage.class
+utils\TestPrepare.class
+AutomationPracticeTest.class
+clothes\pages\Menu.class
+utils\PageObject.class
