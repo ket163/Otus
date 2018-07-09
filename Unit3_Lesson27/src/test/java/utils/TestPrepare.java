@@ -29,8 +29,7 @@ public class TestPrepare {
 
     @BeforeClass
     public void SetupTests() {
-        WebDriverManager.chromedriver()
-                .setup();
+        WebDriverManager.chromedriver().setup();
         getInstance();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -39,7 +38,7 @@ public class TestPrepare {
 
     @AfterClass
     public void AfterTests() {
-        if (driver == null) {
+        if (driver != null) {
             driver.quit();
             driver = null;
         }
